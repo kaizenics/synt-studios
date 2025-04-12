@@ -1,8 +1,22 @@
+import { Container } from "@/components/ui/container"
+import { Button } from "@/components/ui/button"
+import { Spotlight, GridBackground } from "@/components/spotlight-new";
 
 export function Hero() {
   return (
-    <div className="container">
-      <h1>Hello world</h1>
+    <div className="h-[45rem] w-full rounded-md flex md:items-center md:justify-center antialiased bg-grid-white/[0.02] relative overflow-hidden">
+      <GridBackground />
+      <Spotlight />
+      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background to-transparent -z-0" />
+      <Container variant={"fullMobileBreakpointPadded"}>
+        <div className="font-manrope flex flex-col justify-center text-center">
+          <h1 className="text-6xl font-bold text-center">The Ultimate Source for Professional Creative Assets and Software Solutions</h1>
+          <p className="text-lg text-muted-foreground max-w-[800px] mx-auto">Discover premium digital assets, tools, and software solutions designed to elevate your creative projects. From templates to plugins, find everything you need in one place.</p>
+          <Button variant={"default"} className="py-5 px- mx-auto text-base rounded-lg mt-5 z-1 cursor-pointers">
+            Get Started
+          </Button>
+        </div>
+      </Container>
     </div>
   )
 }
