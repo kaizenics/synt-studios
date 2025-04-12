@@ -9,10 +9,10 @@ export function Hero() {
       <Spotlight />
       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background to-transparent -z-0" />
       <Container variant={"fullMobileBreakpointPadded"}>
-        <div className="font-manrope flex flex-col justify-center text-center">
+        <div className="font-manrope flex flex-col justify-center text-cente gap-4">
           <h1 className="text-6xl font-bold text-center">The Ultimate Source for Professional Creative Assets and Software Solutions</h1>
-          <p className="text-lg text-muted-foreground max-w-[800px] mx-auto">Discover premium digital assets, tools, and software solutions designed to elevate your creative projects. From templates to plugins, find everything you need in one place.</p>
-          <Button variant={"default"} className="py-5 px-4 mx-auto text-base rounded-lg mt-5 z-1 cursor-pointer">
+          <p className="text-lg text-muted-foreground max-w-[800px] mx-auto text-center">Discover premium digital assets, tools, and software solutions designed to elevate your creative projects. From templates to plugins, find everything you need in one place.</p>
+          <Button variant={"default"} className="py-5 px-4 mx-auto text-base rounded-lg mt-3 z-1 cursor-pointer">
             Get Started
           </Button>
         </div>
