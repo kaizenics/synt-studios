@@ -18,7 +18,7 @@ export function Navbar() {
   const [searchQuery, setSearchQuery] = useState("")
 
   return (
-    <header className="font-manrope sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="font-manrope fixed top-0 z-50 w-full border-b border-border/40 bg-background/30 backdrop-blur-lg backdrop-saturate-150 supports-[backdrop-filter]:bg-background/10">
       <Container variant={"fullMobileBreakpointPadded"}>
         <div className="flex h-14 items-center justify-between">
           <div className="flex items-center gap-6">
