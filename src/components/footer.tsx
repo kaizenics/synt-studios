@@ -7,6 +7,8 @@ import {
   Handshake,
   Scale,
   Webhook,
+  Tag,
+  ListChecks,
 } from "lucide-react";
 import { Footer } from "@/components/ui/footer";
 
@@ -61,15 +63,15 @@ export function FooterSection() {
       socialLinks={[
         {
           name: "Facebook",
-          href: "https://x.com/raymethula",
+          href: "https://facebook.com/syntstudios",
         },
         {
           name: "Github",
-          href: "https://github.com/serafimcloud",
+          href: "https://github.com/kaizenics/synt-studios",
         },
         {
           name: "Instagram",
-          href: "#",
+          href: "https://instagram.com/syntstudios_",
         },
       ]}
       columns={[
@@ -82,19 +84,19 @@ export function FooterSection() {
               href: "#features",
             },
             {
-              name: "Pricing",
+              name: "On Sale",
+              Icon: Tag,
+              href: "#on-sale",
+            },
+            {
+              name: "Inclusions",
+              Icon: ListChecks,
+              href: "#inclusions",
+            },
+            {
+              name: "Payment Methods",
               Icon: CreditCard,
-              href: "#pricing",
-            },
-            {
-              name: "Integrations",
-              Icon: Webhook,
-              href: "#integrations",
-            },
-            {
-              name: "API Documentation",
-              Icon: CodeXml,
-              href: "/docs/api",
+              href: "#payment-methods",
             },
           ],
         },
