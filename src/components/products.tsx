@@ -15,6 +15,7 @@ import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import lp1 from "@/assets/lp1.jpg";
 import { useState } from "react";
+import { RequiredAuthModal } from "@/components/required-auth-modal";
 import {
   Pagination,
   PaginationContent,
@@ -91,6 +92,10 @@ const products = [
 export function ProductsSection() {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6;
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  
+  // This would typically come from your auth context/provider
+  const isLoggedIn = false; // Set to false for testing, would be dynamic in real app
 
   // Calculate total pages
   const totalPages = Math.ceil(products.length / productsPerPage);
@@ -102,6 +107,15 @@ export function ProductsSection() {
 
   // Change page
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  
+  const handleProductAction = () => {
+    if (!isLoggedIn) {
+      setIsAuthModalOpen(true);
+    } else {
+      // Handle the actual cart/purchase action
+      console.log("Product action performed");
+    }
+  };
 
   return (
     <section className="py-16 font-manrope">
@@ -151,11 +165,18 @@ export function ProductsSection() {
                   </p>
                 </CardContent>
                 <CardFooter className="flex gap-2">
-                  <Button variant="outline" className="flex-1 gap-1">
+                  <Button 
+                    variant="outline" 
+                    className="flex-1 gap-1"
+                    onClick={handleProductAction}
+                  >
                     <ShoppingCart className="h-4 w-4" />
                     Add to Cart
                   </Button>
-                  <Button className="flex-1 gap-1">
+                  <Button 
+                    className="flex-1 gap-1"
+                    onClick={handleProductAction}
+                  >
                     <CreditCard className="h-4 w-4" />
                     Buy Now
                   </Button>
@@ -220,6 +241,11 @@ export function ProductsSection() {
           </Pagination>
         </div>
       </Container>
+      
+      <RequiredAuthModal 
+        isOpen={isAuthModalOpen} 
+        onClose={() => setIsAuthModalOpen(false)} 
+      />
     </section>
   );
 }
