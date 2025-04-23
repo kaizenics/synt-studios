@@ -15,7 +15,7 @@ import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import lp1 from "@/assets/lp1.jpg";
 import { useState } from "react";
-import { RequiredAuthModal } from "@/components/required-auth-modal";
+import { RequiredAuthModal } from "@/components/modal-content/required-auth-modal";
 import {
   Pagination,
   PaginationContent,

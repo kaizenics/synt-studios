@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { UserIcon, ShoppingCart, Search, X, ChevronDown, LogOut, Settings, User } from "lucide-react"
 import { useState } from "react"
+import { RequiredAuthModal } from "@/components/modal-content/required-auth-modal"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,6 +21,7 @@ export function Navbar() {
   const [searchQuery, setSearchQuery] = useState("")
   // This would typically come from your auth context/provider
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
 
   // For demo purposes - toggle login state
   const handleLogin = () => {
@@ -28,6 +30,10 @@ export function Navbar() {
 
   const handleLogout = () => {
     setIsLoggedIn(false)
+  }
+
+  const handleLoginClick = () => {
+    setIsAuthModalOpen(true)
   }
 
   return (
@@ -120,14 +126,19 @@ export function Navbar() {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button variant="outline" size="sm" asChild>
-                <Link href="/login">Login</Link>
+              <Button variant="outline" size="sm" onClick={handleLoginClick}>
+                Login
               </Button>
             )}
             
           </div>
         </div>
       </Container>
+
+      <RequiredAuthModal 
+        isOpen={isAuthModalOpen} 
+        onClose={() => setIsAuthModalOpen(false)} 
+      />
     </header>
   )
 }
